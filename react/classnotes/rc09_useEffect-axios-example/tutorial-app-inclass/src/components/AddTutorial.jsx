@@ -1,6 +1,7 @@
+import axios from "axios";
 import { useState } from "react";
 
-const AddTutorial = () => {
+const AddTutorial = ({ getTutorials }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -12,13 +13,15 @@ const AddTutorial = () => {
     setDescription("");
   };
 
+  //! POST - CRUD (Create)
   const addTutorial = async (newTutor) => {
     const url = "https://tutorials-api-cw.herokuapp.com/api/tutorials";
     try {
       await axios.post(url, newTutor);
     } catch (error) {
-      console.log("error");
+      console.log(error);
     }
+    getTutorials();
   };
 
   return (

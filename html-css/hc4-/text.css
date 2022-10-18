@@ -1,0 +1,64 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@0;1&display=swap');
+
+
+body{
+    background-color: bisque;
+    padding: 30px;
+}
+h2{
+    text-align: center;
+}
+
+#part1{
+    color: blueviolet;
+    text-align: center;
+    text-transform: capitalize;
+    line-height: 40px;
+    letter-spacing: 10px;
+    text-shadow: 3px 3px 5px purple;
+}
+
+#part2{
+    color: #565456;
+    text-align: justify;
+    text-align: right;
+    text-transform: uppercase;
+    column-count: 3;
+    column-rule: 3pxx solid purple;
+}
+
+#part3{
+    color: hsl(0, 100%, 50%);
+    text-align: left;
+    text-decoration:overline red;
+    text-indent: 40px;
+
+}
+
+#part4{
+    color: lightseagreen;
+    text-align: right;
+    /* text-decoration: line-through dashed purple; */
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    /* bu ikisi yazıya ayna görüntüsü veriyor */
+
+
+}
+
+#part5{
+    color:magenta ;
+    text-align: justify;
+    /* text-decoration: overline; */
+    text-decoration: underline wavy blue;
+    word-spacing: 5rem;
+    column-count: 3;
+}
+
+#part6{
+    color: rgb(139, 0, 21);
+    font-family: 'Lobster Two', cursive;
+
+}
+

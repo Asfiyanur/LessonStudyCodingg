@@ -1,0 +1,44 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 200px 20vh calc(100vh - (200px + 30vh)) 10vh;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  background-image: url(https://www.superprof.ca/blog/wp-content/uploads/2018/07/choosing-the-right-computer-1-1060x707.jpg);
+  grid-column: span 12;
+  background-size: cover;
+  background-position: center;
+}
+
+nav {
+  grid-column: span 12;
+  background-color: rgb(79, 95, 223, 0.5);
+}
+
+aside {
+  background-color: rgba(174, 116, 123, 0.5);
+  grid-column: span 3;
+}
+
+main {
+  background-color: rgba(116, 174, 151, 0.5);
+  grid-column: span 9;
+}
+
+footer {
+  grid-column: span 12;
+  background-color: rgba(172, 133, 202, 0.5);
+}

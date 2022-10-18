@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 200px 40vw 20rem;
+  grid-template-rows: 100px 500px 20vh 10rem;
+  justify-content: center;
+}
+
+.content {
+  background-color: blanchedalmond;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content7 {
+  background-image: url(https://pbs.twimg.com/profile_images/883859744498176000/pjEHfbdn_400x400.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.content5 {
+  background-color: coral;
+}

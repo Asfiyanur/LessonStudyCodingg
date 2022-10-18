@@ -1,0 +1,63 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+
+  /* !farklı grid yapma alternatif */
+  grid-template-areas:
+    "header header header header"
+    "nav nav nav nav"
+    "aside aside main main"
+    "footer footer footer footer";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 200px 20vh calc(100vh - (200px + 30vh)) 10vh;
+  /* ! */
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  grid-area: header;
+  background-image: url(https://www.superprof.ca/blog/wp-content/uploads/2018/07/choosing-the-right-computer-1-1060x707.jpg);
+
+  background-size: cover;
+  background-position: center;
+}
+
+nav {
+  /* !farklı grid yapma alternatif */
+  grid-area: nav;
+  /* ! */
+
+  background-color: rgb(79, 95, 223, 0.5);
+}
+
+aside {
+  /* !farklı grid yapma alternatif */
+  grid-area: aside;
+  /* ! */
+
+  background-color: rgba(174, 116, 123, 0.5);
+}
+
+main {
+  /* !farklı grid yapma alternatif */
+  grid-area: main;
+  /* ! */
+  background-color: rgba(116, 174, 151, 0.5);
+}
+
+footer {
+  /* !farklı grid yapma alternatif */
+  grid-area: footer;
+  /* ! */
+  background-color: rgba(172, 133, 202, 0.5);
+}

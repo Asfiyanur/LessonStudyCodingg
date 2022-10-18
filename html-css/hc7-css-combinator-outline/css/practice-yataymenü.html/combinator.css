@@ -1,0 +1,43 @@
+/* /COMBİNATOR ////// */
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+
+/* ?Descendent Selektör */
+.kutu p{
+    color: red;
+}
+
+
+/* ?child selector */
+.kutu > p{
+    color: rgb(55, 128, 0);
+
+}
+
+
+/*? adjacent sibling */
+h1 + h2 {
+    color: rgb(249, 80, 255);
+}
+
+
+/*? general sibling selektor */
+/* h1 den sonra gelen tüm p leri seççiyor aynı parent içinde bulunanları buluyor */
+h1 ~ p{
+    color: darksalmon;
+}
+
+h3{
+    border: 3px solid rgb(192, 255, 199);
+    margin: 2rem;
+    width: 5rem;
+    height: 5rem;
+    outline: 2px solid purple;
+    outline-offset: 10px;
+    border-radius: 50%;
+}

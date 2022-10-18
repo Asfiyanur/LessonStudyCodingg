@@ -1,0 +1,25 @@
+
+*{
+    margin: 0%;
+} 
+
+
+.container{
+    background-color: dodgerblue;
+}
+.box1{
+    background-color: chocolate;
+}
+
+.box2{
+    background-color: darkseagreen;
+    border: 3px solid red;
+    margin: 30px 50px 80px 15px;
+    width: 100px;
+    margin: 20px auto;
+   /*  genişlik verilmişse margin.auto çalışır */
+}
+
+.box3{
+    background-color: darksalmon;
+}

@@ -1,0 +1,38 @@
+/* grup selektör */
+
+/* div{
+    border: 2px solid red;
+} */
+
+div p{
+    border: 2px solid red; 
+}
+
+.container div p{
+    background-color: aquamarine;
+}
+
+/* p den sonra gelen div demek */
+
+p + div{
+    background-color: brown;
+}
+
+/* attribute ı title="baslık1,2" olan p demek  */
+p[title="baslik1"]{
+    background-color: blueviolet;
+}
+
+p[title="baslık2"]{
+    background-color: coral;
+}
+
+/* p::first-letter{
+    font-size: 2rem;
+}
+
+p::first-line{
+    font-style: italic;
+    font-weight: bold;
+} */
+

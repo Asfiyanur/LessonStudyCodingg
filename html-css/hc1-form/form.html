@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+    #yorum{
+        resize: none;
+        width: 300px;
+        height: 100px;
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to Clarusway</h1>
+    <form action="result.html" method="get">
+        <div>
+        
+             <label for="name">Adınızı Giriniz:</label>
+       
+             <input type="text" name="isim" id="name" placeholder="İsminizi giriniz" >
+        
+             <br><br><br>
+
+             <label for="lastname">Soyadınızı Giriniz </label>
+
+             <input type="text" name="soyad" id="lastname" placeholder="Soyadınızı giriniz" >
+
+             <br><br><br>
+
+             <label for="password">Şifrenizi Giriniz</label>
+             <input type="password" name="password" id="password" placeholder="Parolanızı Giriniz" >
+             <!-- required : zorunlu doldurtma yapıyor -->
+
+        
+
+        </div>
+
+        <br><br>
+
+        <div>
+            Cinsiyetinizi giriniz.
+
+            <br><br>
+
+            <label for="">Erkek</label>
+            <input type="radio" name="Cİnsiyet" name="cinsiyet" id="gelder" value="erkek" required>
+
+            <label for="">kadın</label>
+            <input type="radio" name="Cİnsiyet" name="cinsiyet" id="gelder" value="kadın" required >
+
+        </div>
+
+        <br><br>
+
+        <div>
+            Favori Hayvanlarınızı Giriniz. <br><br>
+            <!-- value bilgini (hayvan1' in ne olduğunu) arkada kimliğini gösteriyor -->
+
+            <input type="checkbox" name="hayvan1"  id="panda" value="panda">
+            <label for="panda">Panda</label>
+
+            <input type="checkbox" name="hayvan2"  id="balık" value="balık">
+            <label for="balık">Balık</label>
+
+            <input type="checkbox" name="hayvan3"  id="at" value="at">
+            <label for="at">At</label>
+
+            <input type="checkbox" name="hayvan4"  id="kuş" value="kuş">
+            <label for="kuş">Kuş</label>
+
+            
+        </div>
+
+        <br><br>
+
+        <div>
+            <label for="age">Yaşınızı giriniz</label>
+            <input type="number" name="Girilen Yaş" id="age"step="5" min="18" max="45">
+
+
+        </div>
+
+        <br><br>
+
+        <div>
+            <label for="search">Ara</label>
+            <input type="search" name="Aranan Kelime" id="search" maxlength="30">
+
+        </div>
+
+        <br><br>
+
+        <div>
+            <label for="renk">renk seçiniz</label>
+            <input type="color" name="seçilen renk" id="renk" >
+
+        </div>
+
+        <br><br>
+
+        <div>
+            <label for="tarih">Tarih seçiniz</label>
+            <input type="date" name="seçilen tarih" id="tarih" min="2022-05-20" max="2022-08-02">
+
+        </div>
+
+        <br><br>
+        
+        <div>
+            <label for="email">Email Giriniz</label>
+            <input type="email" name="Girilen email" id="email" >
+
+        </div>
+
+        <br><br>
+
+        <div>
+            <label for="dosya">Dosya seçiniz</label>
+            <input type="file" name="seçilen dosya" id="dosya" >
+
+        </div>
+
+        <br><br>
+
+        <div>
+            <label for="telnum">Telefon numarası giriniz</label>
+            <input type="tel" name="Girilen No" id="telnum" pattern="[0-9,+]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="xxx-xxx-xx-xx">
+
+        </div>
+
+        <br><br>
+
+        <div>
+            <label for="tatlı">Hangi Tatlıyı İstersiniz</label>
+            <br>
+            <select name="seçilen tatlı" id="tatlı" size="5">
+                <!-- multible yazarsak çoklu seçtirme yapıyor -->
+                <!-- <option value=""selected disabled>seçiminiz</option> -->
+
+                <option value="sütlaç">sütlaç</option>
+                <option value="keşkül">keşkül</option>
+                <option value="profiterol">profiterol</option>
+                <option value="kazandibi">kazandibi</option>
+                <option value="şekerpare">şekerpare</option>
+                <option value="künefe">künefe</option>
+                
+            </select>
+        </div>
+        <br><br>
+        <div>
+            <label for="tatlı">Hangi Tatlıyı İstersiniz</label>
+            <br>
+            <select name="seçilen tatlı" id="tatlı" size="5" multiple >
+                <optgroup label="sütlü">
+                  <option value="sütlaç">sütlaç</option>
+                  <option value="keşkül">keşkül</option>
+                  <option value="profiterol">profiterol</option>
+                  <option value="kazandibi">kazandibi</option>
+                  <option value="şekerpare">şekerpare</option>
+                  <option value="künefe">künefe</option>
+                </optgroup>
+                <optgroup label="şerbetli">
+                  <option value="sütlaç">sütlaç</option>
+                  <option value="keşkül">keşkül</option>
+                  <option value="profiterol">profiterol</option>
+                  <option value="kazandibi">kazandibi</option>
+                  
+                </optgroup>
+
+                
+            </select>
+        </div>
+
+        <br><br>
+
+        <div>
+           <label for="yorum">yorum yazınız</label>
+           <br><br>
+           <textarea name="girilen_yorum" id="yorum" cols="30" rows="10" placeholder="yorum giriniz ..."></textarea>
+
+        </div>
+
+        <br><br>
+
+        <div>
+            <label for="browser">Browsers:</label>
+            <input type="text" name="kullanılan-Browser" id="browser" list="listbrowsers">
+            
+            <datalist id="listbrowsers">
+                <option value="chrome"></option>
+                <option value="opera"></option>
+                <option value="firefrox"></option>
+                <option value="safari"></option>
+                <option value="brave"></option>
+            </datalist>
+
+
+
+        </div>
+        <br><br>
+        <div>
+            <fieldset>
+                <legend>Kişisel Bilgiler</legend>
+                <label for="frame">number</label>
+                <input type="number" name="number" id="frame">
+                <br><br>
+
+                <label for="frame1">isim</label>
+                <input type="text" name="isim" id="frame1">
+                <br><br>
+
+                <label for="frame2">soyisim</label>
+                <input type="text" name="soyisim" id="frame2">
+
+
+
+            </fieldset>
+
+
+        </div>
+
+
+
+
+
+
+        <br><br>
+
+        <input type="submit" value="gönder" >
+        <br><br>
+        <input type="reset" value="sıfırla" >
+    
+    </form>
+    
+</body>
+</html>

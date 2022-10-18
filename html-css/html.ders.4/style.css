@@ -1,0 +1,38 @@
+/* universel selektor hepsini birbirine yapıştırıyor.genellikle herşeyi sıfırlama için kullanılır
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ */
+
+#prg3{
+    background-color: chocolate;
+    color: darkturquoise;
+}
+
+.ortak{
+    background-color:aquamarine;
+}
+
+#id1{
+    background-color: coral;
+    border: 5px solid black;
+
+    /* shorthand !!!!! 1rem=16px demektir*/
+
+    border-style: dashed;
+
+    border-width: 20px;
+    border-color: darkcyan;
+
+    border-radius: 20px;
+    /* border-radius: 50%; */
+
+    padding: 20px;
+    margin: 50px ;
+    /* ya da ; margin: 50px 70px 90px 50px; */
+    text-align: center;
+
+}
+

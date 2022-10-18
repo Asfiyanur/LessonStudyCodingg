@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div-span</title>
+    <style>
+        #div2{
+            border: 3px solid red;
+            background-color: rgb(170, 155, 242);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 50%;
+            border-radius: 25px;
+            box-shadow: 3px 3px 10px blue;
+            margin: auto;
+        }
+        #span1{
+            font-weight:bolder;
+            background-color: burlywood;
+        }
+        .container{
+            border:5px solid green;
+            background-color: brown;
+            margin: auto;
+            width: 80%;
+            border-radius: 30px;
+        }
+        #span2{
+            font-size: 2rem;
+            font-weight: bolder;
+            background-color: aquamarine;
+            color:darkgoldenrod;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Bu bir başlıktır</h1>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque iusto optio adipisci, facilis autem asperiores quos culpa porro repellat sequi dolorem, praesentium quasi distinctio a quam quidem dolorum, incidunt tenetur?
+    </p>
+    </div>
+    
+    <div id="div2">
+    <h1>Bu bir başlıktır</h1>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque iusto optio adipisci, <span id="span1">facilis autem asperiores quos culpa porro repellat sequi dolorem,</span>praesentium quasi distinctio a quam quidem dolorum, incidunt tenetur?
+    </p>
+    </div>
+
+    <div class="container">
+        <div>
+            <h1>Bu bir başlıktır</h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque iusto optio adipisci, facilis autem asperiores quos culpa porro repellat sequi dolorem, praesentium quasi distinctio a quam quidem dolorum, incidunt tenetur?
+            </p>
+            </div>
+            
+            <div>
+            <h1>Bu bir başlıktır</h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.<span id="span2">Eaque iusto optio adipisci, facilis autem asperiores quos culpa porro repellat sequi dolorem,</span>  praesentium quasi distinctio a quam quidem dolorum, incidunt tenetur?
+            </p>
+            </div>
+        
+    </div>
+    
+    
+
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+* {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/*! Yatay hizalama çrnekleri */
+
+.container {
+  background-color: fuchsia;
+  display: flex;
+  /*! Elemanların diziliş yönü : column, row, row-reverse, column-reverse*/
+  flex-direction: row; /*! default => row*/
+
+  /*? sıkıştırma veya alt satıra geçebilme:flex-wrap: wrap, nowrap, wrap-reverse*/
+  flex-wrap: wrap;
+  gap: 10px 80px;
+  /* padding-top: 0.5rem; */
+}
+
+.container div {
+  background-color: gold;
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem;
+}
+
+/*! Dikey hizalama örnekleri */
+
+.container1 {
+  height: 20rem;
+  background-color: aquamarine;
+  display: flex;
+  gap: 20px 10px;
+  padding: 0.5rem;
+  flex-wrap: wrap;
+
+  /* yatay */
+  justify-content: center;
+  /* dikey */
+  /* align-items: center; */
+
+  /* wrap varsa çok satırlı*/
+  align-items: flex-end;
+
+  /* wrap yoksa */
+  align-content: flex-end;
+
+  overflow: auto;
+}
+
+.container1 div {
+  background-color: crimson;
+  height: 5rem;
+  width: 5rem;
+}
+
+/* FLex-grow */
+
+.container2 {
+  background-color: coral;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.container2 div {
+  background-color: darkcyan;
+  /* width: 5rem; */
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.container2 .grow2 {
+  flex-grow: 2;
+}
+
+.container2 .grow3 {
+  flex-grow: 3;
+}
+
+.container2 .grow-no {
+  flex-grow: 0;
+}
+
+.container3 {
+  background-color: rgb(176, 255, 80);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  width: 50vw;
+}
+
+.container3 div {
+  background-color: blue;
+}
+
+div.div1 {
+  width: 10%;
+}
+
+div.div2 {
+  width: 20%;
+}
+
+div.div3 {
+  width: 30%;
+}
+
+div.div4 {
+  width: 40%;
+}

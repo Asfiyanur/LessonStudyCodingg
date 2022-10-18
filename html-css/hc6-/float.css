@@ -1,0 +1,41 @@
+.img-float{
+    width: 40%;
+    float: left;
+    margin-right: 10px;
+    margin-left:20px ;
+}
+
+p{
+    background-color: cornflowerblue;
+    text-align: justify;
+}
+
+.clear{
+    clear: both;
+
+    /* aradaki div yada bir paragarf için clear yaparsak float ı bozuyor. blok element olması lazım, p yi div e de koymaya gerek olmaz. */
+}
+
+.box{
+    float: left;
+    font-size: 2rem
+}
+
+.box1{
+    background-color:rgb(255, 196, 200) ;
+    width: 20%;
+}
+
+.box2{
+    background-color: rgb(223, 255, 196);
+    width: 50%;
+
+
+}
+
+.box3{
+    background-color: rgb(250, 196, 255);
+    width: 20%;
+
+}
+

@@ -1,0 +1,69 @@
+/* body{
+    height: 100vh;
+    border: 4px solid palevioletred;
+} */
+
+.abs{
+    background-color: bisque;
+    width: 5cm;
+    
+}
+/* !!!!!!!!! */
+html{
+    font-size: 20px;
+    /* !!!!!!!!!!! */
+}
+
+
+.div2{
+    background-color: aquamarine;
+    width: 50%;
+    height: 50%;
+}
+.div3{
+    background-color: rgb(202, 255, 127);
+    width: 50%;
+    height: 50vh;
+    /* yüzdeler parent a bağımlı genişlik alır */
+}
+.div4{
+    background-color: rgb(255, 204, 127);
+    width: 100vw;
+    /* vw ise parenttan bağımsız genişlik alır  */
+}
+
+.div5{
+    background-color: rgb(223, 255, 127);
+    font-size: 1em;      
+     /* 16px */
+}
+.div6{
+    background-color: rgb(180, 221, 176);
+    font-size: 2em;    
+    /* 32px */
+    
+}
+.div7{
+    background-color: rgb(127, 195, 255);
+    font-size: 3em;   
+    /*  öceki parent daki em in 3 katı olur .32*3= 96px */
+}
+
+.div8{
+    /* html deki px i değiştirerek rem değerlerini verdiğimiz tüm yazıları aynı anda orantısal olarak değiştirebilir.Yani 1rem =10px olur */
+
+    background-color: rgb(223, 255, 127);
+    font-size: 1rem;      
+     
+}
+.div9{
+    background-color: rgb(180, 221, 176);
+    font-size: 2rem;    
+   
+    
+}
+.div10{
+    background-color: rgb(127, 195, 255);
+    font-size: 3rem;   
+    
+}

@@ -13,7 +13,7 @@ import { useState, useEffect } from "react";
 //! }, []);
 
 //! useEffect(() => {
-//*   */ componentDidUpdate code */
+//*   */ ComponentDidMount + componentDidUpdate code */
 //! }, [var1, var2]);
 
 //! useEffect(() => {
@@ -28,31 +28,46 @@ import { useState, useEffect } from "react";
 //!   return () => {
 //*     //* componentWillUnmount code */
 //!   };
-//! }, [var1, var2]);
-
-// const UseEffectHook = () => {
-//   useEffect(() => {
-//     // didMount + didUpdate
-//     return () => {
-//       // clean-up func :unmount
-//     };
-//   }, []); // dependency array ( burası bol olursa tek sefer çalışıp ;didmount yapar ya da mount+update i beraberyapıyor)
-
-//   return <div>UseEffectHook</div>;
-// };
-
-// export default UseEffectHook;
+//! }, [var1, var2]); //? Dependency Array
 
 const UseEffectHook = () => {
   const [count, setCount] = useState(0);
-  useEffect(() => {
-    console.log("mounting");
-    setTimeout(() => {
-      alert("data fetch");
-    }, 5000);
-  }, [count]);
 
-  console.log("rendering");
+  //? componentDidMount
+  //! fetch, asyn-await ,localStorage, setTimeout, setInterval();
+  // useEffect(() => {
+  //   console.log("Mounting");
+  //   setTimeout(() => {
+  //     alert("Data Fetched");
+  //   }, 3000);
+  // }, []);
+
+  //?componentDidMount + componentDidUpdate
+  // useEffect(() => {
+  //   console.log("Mounting + Updating");
+  //   setTimeout(() => {
+  //     alert("Data Fetched");
+  //   }, 1000);
+  // }, [count]);
+
+  //?componentDidUnmount
+  const fetchData = () => {
+    console.log("Data Fetched");
+  };
+
+  useEffect(() => {
+    //! ComponentDidMount
+    const timerId = setInterval(fetchData, 1000);
+    console.log("Mounting");
+
+    return () => {
+      //! componentWillUnmount
+      clearInterval(timerId);
+      console.log("Unmounting");
+    };
+  }, []);
+
+  console.log("Rendering");
   return (
     <div className="container text-center">
       <h1 className="text-danger">USE EFFECT</h1>

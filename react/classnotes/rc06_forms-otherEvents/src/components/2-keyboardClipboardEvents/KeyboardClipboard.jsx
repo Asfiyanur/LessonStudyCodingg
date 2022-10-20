@@ -37,8 +37,7 @@ const KeyboardClipboard = () => {
           e.preventDefault();
           alert("you cannot copy this doc");
         }}
-        className="text-start mt-4"
-      >
+        className="text-start mt-4">
         {inputValue}
       </p>
 
@@ -47,8 +46,7 @@ const KeyboardClipboard = () => {
         name="area"
         id="area"
         rows="10"
-        onPaste={handleAreaPaste}
-      ></textarea>
+        onPaste={handleAreaPaste}></textarea>
     </div>
   );
 };

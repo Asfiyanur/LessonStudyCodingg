@@ -32,8 +32,7 @@ const MouseEvent = () => {
         id="todo-1"
         className="bg-success text-light w-50 p-4"
         onMouseEnter={() => setShowHint(true)}
-        onMouseOut={() => setShowHint(false)}
-      >
+        onMouseOut={() => setShowHint(false)}>
         todo item 1
       </div>
       {showHint && <span>hello React</span>}
@@ -41,16 +40,14 @@ const MouseEvent = () => {
       <div
         id="todo-2"
         className="bg-success text-light w-50 p-4 mt-4"
-        onDoubleClick={handleDoubleClick}
-      >
+        onDoubleClick={handleDoubleClick}>
         todo item 2
       </div>
 
       <div
         id="todo-3"
         className="bg-success text-light w-50 p-4 my-4"
-        onMouseMove={handleMouseMove}
-      >
+        onMouseMove={handleMouseMove}>
         todo item 3
       </div>
 

@@ -28,7 +28,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="">
+    <div className="mt-4 d-flex justfiy-content-center flex-column">
       <Button
         variant="danger"
         size="lg"

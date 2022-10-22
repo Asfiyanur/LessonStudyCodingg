@@ -12,11 +12,11 @@ function App() {
     <>
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/people" element={<People />}></Route>
-        <Route path="/paths" element={<Paths />}></Route>
-        <Route path="/contact" element={<Contact />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/people" element={<People />} />
+        <Route path="/paths" element={<Paths />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>

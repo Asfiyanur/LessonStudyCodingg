@@ -14,6 +14,17 @@ const TaskList = ({ task, getTask }) => {
     getTask();
   }, []);
 
+  const editTask = async ({ task, date, id }) => {
+    // const { id, title, description } = item;
+    const url = "https://63518210dfe45bbd55c21bb8.mockapi.io/api/tasks";
+    try {
+      await axios.put(`${url}/${id}`, { task, date });
+    } catch (error) {
+      console.log(error);
+    }
+    getTask();
+  };
+
   return (
     <div>
       {task?.map((item) => {
@@ -27,6 +38,12 @@ const TaskList = ({ task, getTask }) => {
               <p>{date}</p>
               <p>{time}</p>
             </div>
+            <Button
+              onClick={() => editTask({ task, date })}
+              data-bs-toggle="modal"
+              data-bs-target="#edit-modal">
+              Edit
+            </Button>
             <Button onClick={() => deleteTask(id)}>delete</Button>
           </div>
         );

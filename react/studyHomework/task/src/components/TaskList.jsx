@@ -21,7 +21,7 @@ const TaskList = ({ task, getTask }) => {
         return (
           <div
             key={id}
-            className="d-flex justify-content-evenly bg-light rounded-2 p-2 mt-2 ">
+            className="d-flex justify-content-between bg-light rounded-2 p-2 mt-2 ">
             <div>
               <h4>{task}</h4>
               <p>{date}</p>

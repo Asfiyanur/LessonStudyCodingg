@@ -35,7 +35,7 @@ const Home = () => {
 
   return (
     <div className="text-center">
-      <div>
+      <div className="d-flex justify-content-center align-items-center">
         <TaskSvg />
         <h1>Task Tracker</h1>
       </div>
@@ -47,7 +47,7 @@ const Home = () => {
         {text}
       </Button>
 
-      {isOpen && <AddTask />}
+      {isOpen && <AddTask getTask={getTask} />}
       <TaskList task={task} getTask={getTask} />
     </div>
   );

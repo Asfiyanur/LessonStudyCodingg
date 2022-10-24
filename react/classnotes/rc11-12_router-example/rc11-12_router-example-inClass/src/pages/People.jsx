@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 const People = () => {
   const [people, setPeople] = useState([]);
-  const navigate = useNavigate();
 
   const getPeople = () => {
     fetch("https://reqres.in/api/users")
@@ -26,9 +24,7 @@ const People = () => {
               key={id}
               className=" col-sm-12 col-md-6 col-lg-4"
               type="button"
-              // onClick={() => navigate(`/people/${id}`, { state: person })}
-              onClick={() => navigate(`/people/${id}`)}
-            >
+              onClick={() => navigate(`/people/${id}`, { staex })}>
               <img className="rounded" src={avatar} alt="img" />
               <h6>
                 {first_name} {last_name}

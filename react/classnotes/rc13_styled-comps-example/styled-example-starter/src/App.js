@@ -1,4 +1,5 @@
 import { ThemeProvider } from "styled-components";
+import Card from "./component/Card";
 import Header from "./component/Header";
 import { GlobalStyles } from "./component/styled/Global.styled";
 
@@ -13,6 +14,7 @@ const App = () => {
     <ThemeProvider theme={style}>
       <GlobalStyles />
       <Header />
+      <Card />
     </ThemeProvider>
   );
 };

@@ -3,6 +3,8 @@ import styled from "styled-components";
 const StyledHeader = styled.header`
   background-color: ${({ theme }) => theme.colors.header};
   padding: 4rem 0;
+  width: 90%;
+  margin: 1rem auto;
 `;
 
 export const Logo = styled.img`
@@ -22,7 +24,7 @@ export const Nav = styled.nav`
 
 export const Image = styled(Logo)`
   @media (max-width: ${({ theme }) => theme.responsive}) {
-    margin: 2rem 0;
+    margin: 1rem 0;
   }
 `;
 

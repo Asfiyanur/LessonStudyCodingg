@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
     body{
         background-color: ${({ theme }) => theme.colors.body};
         
+        
     }
 
     p{

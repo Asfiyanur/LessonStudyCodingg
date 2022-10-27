@@ -8,6 +8,7 @@ const Flex = styled.div`
 
   @media (max-width: ${({ theme }) => theme.responsive}) {
     flex-direction: column;
+    text-align: center;
   } ;
 `;
 

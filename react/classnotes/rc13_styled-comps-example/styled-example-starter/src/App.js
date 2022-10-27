@@ -4,7 +4,7 @@ import Header from "./component/Header";
 const style = {
   colors: { header: "#fff", body: "#fff", footer: "#8A1C4A" },
   margins: {},
-  responsive: {},
+  responsive: "768px",
 };
 
 const App = () => {

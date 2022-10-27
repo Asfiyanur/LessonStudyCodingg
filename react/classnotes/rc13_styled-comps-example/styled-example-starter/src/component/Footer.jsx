@@ -4,7 +4,9 @@ import FooterDiv, {
   FooterContent,
   Footerflex,
   FooterLogo,
+  SocialIcons,
 } from "./styled/Footer.styled";
+import { FaTwitterSquare, FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -29,6 +31,17 @@ const Footer = () => {
             <li>Blog</li>
             <li>Contact Us</li>
           </ul>
+          <SocialIcons>
+            <a href="http://www.twitter.com">
+              <FaTwitterSquare />
+            </a>
+            <a href="http://www.facebook.com">
+              <FaFacebookSquare />
+            </a>
+            <a href="http://www.linkedin.com">
+              <FaLinkedin />
+            </a>
+          </SocialIcons>
         </Footerflex>
       </FooterContent>
     </FooterDiv>

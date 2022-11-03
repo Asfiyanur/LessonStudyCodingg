@@ -21,14 +21,16 @@ const TextFieldComp = () => {
             id="email"
             label="Email"
             placeholder="enter your email"
-            error={false}
+            error={error}
+            helperText={error && "Incorrect email format"}
             fullWidth
           />
           <TextField
             id="password"
             label="password"
             placeholder="enter your password"
-            error={false}
+            error={error}
+            helperText={error && "Incorrect password format"}
             fullWidth
           />
           <Button variant="contained" color="warning" sx={{ mt: 3 }}>

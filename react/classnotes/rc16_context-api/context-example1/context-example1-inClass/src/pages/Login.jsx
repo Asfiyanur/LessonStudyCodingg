@@ -1,12 +1,17 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { useContext } from "react";
 import { LoginContext } from "../context/LoginContext";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [user, setUser] = useContext(LoginContext);
+  //! local state
+  // const [user, setUser] = useState({ email: "", password: "" });
+
+  //! Consuming LoginContext
+  const { user, setUser } = useContext(LoginContext);
 
   const navigate = useNavigate();
 
@@ -15,6 +20,7 @@ const Login = () => {
     navigate(-1);
   };
 
+  console.log(user);
   return (
     <Container>
       <h1 className="text-center mt-4">LOGIN PAGE</h1>

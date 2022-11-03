@@ -4,7 +4,10 @@ import { LoginContext } from "../context/LoginContext";
 
 const PrivateRouter = () => {
   // const user = true;
+
+  //! Consuming
   const { user } = useContext(LoginContext);
+
   return user?.email ? <Outlet /> : <Navigate to="/login" />;
 };
 

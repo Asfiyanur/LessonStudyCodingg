@@ -2,9 +2,10 @@ import { initializeApp } from "firebase/app";
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
-import { navigate } from "react-router-dom";
 
 //* Your web app's Firebase configuration
 // TODO: Replace the following with your app's Firebase project configuration
@@ -36,14 +37,33 @@ export const createUser = async (email, password, navigate) => {
     navigate("/");
     console.log(userCredential);
   } catch (error) {
-    console.log(error.message);
+    alert(error.message);
   }
 };
 
-export const signIn = async (email, password) => {
+//* https://console.firebase.google.com/
+//* => Authentication => sign-in-method => enable Email/password
+//! Email/password ile girişi enable yap
+export const signIn = async (email, password, navigate) => {
   try {
-    signInWithEmailAndPassword(auth, email, password);
+    await signInWithEmailAndPassword(auth, email, password);
+    navigate("/");
   } catch (error) {
-    console.log(error.message);
+    alert(error.message);
   }
+};
+
+export const userObserver = () => {
+  //? Kullanıcının signin olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log(user);
+    } else {
+      console.log("user signed out");
+    }
+  });
+};
+
+export const logOut = () => {
+  signOut(auth);
 };

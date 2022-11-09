@@ -5,6 +5,7 @@ import Card from "./components/Card";
 import ClearButton from "./components/ClearButton";
 import Header from "./components/Header";
 import HeaderMemo from "./components/HeaderMemo";
+import UseRefComp from "./components/UseRefComp";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -75,6 +76,11 @@ function App() {
       </div>
       <hr />
       <ClearButton handleClear={handleClear} />
+      <br />
+      <br />
+      <hr />
+      <h1>useRef</h1>
+      <UseRefComp />
       <br />
       <br />
     </div>

@@ -6,12 +6,17 @@ import ClearButton from "./components/ClearButton";
 import Header from "./components/Header";
 import HeaderMemo from "./components/HeaderMemo";
 import UseRefComp from "./components/UseRefComp";
+import TaxComp from "./components/TaxComp";
 
 function App() {
   const [count, setCount] = useState(0);
   const [text, setText] = useState("");
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
+
+  const taxData = { tax: 13, ship: 15 };
+
+  //  const
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -54,6 +59,7 @@ function App() {
         <HeaderMemo count={count < 5 ? 0 : count} />
       </div>
       <hr />
+      <TaxComp taxData={taxData} />
       <div>
         <p>{count}</p>
         <button className="btn btn-danger" onClick={() => setCount(count + 1)}>

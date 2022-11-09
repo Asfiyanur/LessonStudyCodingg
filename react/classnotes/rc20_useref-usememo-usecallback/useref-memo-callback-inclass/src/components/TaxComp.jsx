@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const TaxComp = () => {
-    return (
-        <div>TaxComp</div>
-    )
-}
+const TaxComp = ({ taxData }) => {
+  return <div>TaxComp : {JSON.stringify(taxData.current)}</div>;
+};
 
-export default TaxComp
+export default TaxComp;

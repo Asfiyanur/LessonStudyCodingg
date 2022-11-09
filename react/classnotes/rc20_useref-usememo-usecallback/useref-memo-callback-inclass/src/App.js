@@ -1,5 +1,8 @@
+import { useCallback } from "react";
+import { useMemo } from "react";
 import { useEffect, useState } from "react";
 import Card from "./components/Card";
+import ClearButton from "./components/ClearButton";
 import Header from "./components/Header";
 import HeaderMemo from "./components/HeaderMemo";
 
@@ -18,13 +21,29 @@ function App() {
       });
   }, []);
 
-  const filteredData = data?.filter((item) =>
-    item.name.toLowerCase().includes(search.toLowerCase())
-  );
+  // const filteredData = data?.filter((item) =>
+  //   item.name.toLowerCase().includes(search.toLowerCase())
+  // );
+
+  const filteredData = useMemo(() => {
+    return data?.filter((item) =>
+      item.name.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [data, search]);
 
   const handleSearch = () => {
     setSearch(text);
   };
+
+  // const handleClear = () => {
+  //   setText("");
+  //   setSearch("");
+  // };
+
+  const handleClear = useCallback(() => {
+    setText("");
+    setSearch("");
+  }, []);
 
   return (
     <div className="container mt-2">
@@ -54,6 +73,10 @@ function App() {
       <div className="row">
         <Card data={filteredData} />
       </div>
+      <hr />
+      <ClearButton handleClear={handleClear} />
+      <br />
+      <br />
     </div>
   );
 }

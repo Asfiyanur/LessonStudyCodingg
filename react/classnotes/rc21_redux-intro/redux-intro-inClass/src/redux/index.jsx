@@ -1,4 +1,4 @@
-const initiaState = {
+const initialState = {
   counter: 0,
 };
 

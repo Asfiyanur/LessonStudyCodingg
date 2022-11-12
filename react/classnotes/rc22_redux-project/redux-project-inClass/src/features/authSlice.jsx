@@ -7,19 +7,26 @@ const initialState = {
 
 const authSlice = createSlice({
   name: "auth",
-  initialState: initialState,
+  initialState,
   reducers: {
-    setUser: (state, action) => {
-      state.user = action.payload;
+    setUser: (state, { payload }) => {
+      state.user = payload;
     },
     clearUser: (state) => {
       state.user = null;
     },
   },
-  //   action typelara göre atate leri değştirir.(reducslar) nested yapı var =>
-  //  ( key:value ) olarak yazılır.
 });
 
 export const { setUser, clearUser } = authSlice.actions;
-
 export default authSlice.reducer;
+
+//!Types
+// export const SET_USER = "SET_USER"
+
+//! action creators
+// export const setUser = (payload)=>{
+//   return {type:SET_USER, payload}
+// }
+
+//!reducer

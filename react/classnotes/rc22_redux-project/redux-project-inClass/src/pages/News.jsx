@@ -15,8 +15,7 @@ const News = () => {
         display="flex"
         alignItems="center"
         justifyContent="space-evenly"
-        flexWrap="wrap"
-      >
+        flexWrap="wrap">
         {[1, 2, 3].map((item, index) => (
           <Card sx={{ maxWidth: 345, m: 5, maxHeight: 600 }} key={index}>
             <CardMedia

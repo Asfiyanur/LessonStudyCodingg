@@ -7,13 +7,16 @@ import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate();
     setEmail("");
     setPassword("");
   };
@@ -26,8 +29,7 @@ export default function Login() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-        }}
-      >
+        }}>
         <Avatar
           alt="avatar_img"
           src="https://cdn.pixabay.com/photo/2017/03/21/02/00/user-2160923_960_720.png"
@@ -67,8 +69,7 @@ export default function Login() {
             fullWidth
             variant="contained"
             color="secondary"
-            sx={{ mt: 3, mb: 2 }}
-          >
+            sx={{ mt: 3, mb: 2 }}>
             Sign In
           </Button>
         </Box>

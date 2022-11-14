@@ -14,22 +14,28 @@ import {
 import { AccountCircle } from "@mui/icons-material";
 import PhoneEnabledIcon from "@mui/icons-material/PhoneEnabled";
 
-const FormComponent = () => {
+const FormComponent = ({ info, setInfo, handleSubmit }) => {
+  const handleChange = (e) => {
+    e.preventDefault();
+    // const name=e.target.name;
+    // const value=e.target.value;
+    const { name, value } = e.target;
+    setInfo({ ...info, [name]: value });
+    console.log(info);
+  };
   return (
     <Grid
       textAlign="center"
       verticalAlign="middle"
       direction="column"
-      style={{ width: "300" }}
-    >
+      style={{ width: "300" }}>
       <p className="contact-header">
         <div>
           <a
             href="https://clarusway.com/"
             className="design"
             target="_blank"
-            rel="noopener noreferrer"
-          >
+            rel="noopener noreferrer">
             <code>{"<Clarusway/> "}</code>
           </a>
         </div>
@@ -38,13 +44,13 @@ const FormComponent = () => {
       <h2 className="contact-header">Add Contact</h2>
 
       <Box style={{ backgroundColor: "white", padding: "20px" }}>
-        <form>
+        <form onSubmit={handleSubmit}>
           <Stack spacing={3} direction="column">
             <TextField
               variant="outlined"
               name="username"
-              value={null}
-              onChange={null}
+              value={info.username}
+              onChange={handleChange}
               placeholder="Name"
               InputProps={{
                 startAdornment: (
@@ -57,8 +63,8 @@ const FormComponent = () => {
             <TextField
               variant="outlined"
               name="phoneNumber"
-              value={null}
-              onChange={null}
+              value={info.phoneNumber}
+              onChange={handleChange}
               placeholder="Phone Number"
               InputProps={{
                 startAdornment: (
@@ -74,9 +80,8 @@ const FormComponent = () => {
                 label="Gender"
                 name="gender"
                 variant="outlined"
-                value={null}
-                onChange={null}
-              >
+                value={info.gender}
+                onChange={handleChange}>
                 <MenuItem value="Female">Female</MenuItem>
                 <MenuItem value="Male">Male</MenuItem>
                 <MenuItem value="Other">Other</MenuItem>

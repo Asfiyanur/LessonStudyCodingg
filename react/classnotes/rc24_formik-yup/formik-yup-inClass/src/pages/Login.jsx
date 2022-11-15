@@ -8,10 +8,31 @@ import image from "../assets/result.svg";
 import { Link, useNavigate } from "react-router-dom";
 
 import { useSelector } from "react-redux";
+import { Formik, Form } from "formik";
+import { TextField } from "@mui/material";
+import LoadingButton from "@mui/lab/LoadingButton";
+import * as yup from "yup";
+
+const loginSchema = yup.object().shape({
+  name: yup.string().required(),
+  age: yup.number().required().positive().integer(),
+  email: yup.string().email("please enter vaid email").required("enter mail"),
+  password: yup
+    .string()
+    .required("please enter a password")
+    .min(8, "password must have min eight chars")
+    .max(16, "password must have max sixteen chars")
+    .matches(/\d+/, "password must have less a number")
+    .matches(/[a-z]+/, "password must have less a lowercase")
+    .matches(/[!,?{}><%&$#£+-.]+/, "password must have less a special char")
+    .matches(/[A-Z]/, "password must have less a uppercase"),
+
+  website: yup.string().url(),
+});
 
 const Login = () => {
   const navigate = useNavigate();
-  const { currentUser, error } = useSelector((state) => state?.auth);
+  const { currentUser, error, loading } = useSelector((state) => state?.auth);
 
   return (
     <Container maxWidth="lg">
@@ -22,8 +43,7 @@ const Login = () => {
         sx={{
           height: "100vh",
           p: 2,
-        }}
-      >
+        }}>
         <Grid item xs={12} mb={3}>
           <Typography variant="h3" color="primary" align="center">
             STOCK APP
@@ -37,18 +57,71 @@ const Login = () => {
               m: "auto",
               width: 40,
               height: 40,
-            }}
-          >
+            }}>
             <LockIcon size="30" />
           </Avatar>
           <Typography
             variant="h4"
             align="center"
             mb={4}
-            color="secondary.light"
-          >
+            color="secondary.light">
             Login
           </Typography>
+
+          <Formik
+            initialValues={{ email: "", password: "" }}
+            validationSchema={loginSchema}
+            onSubmit={(values, actions) => {
+              //!login(values)
+              actions.resetForm();
+              actions.setSubmitting(false);
+            }}>
+            {({
+              values,
+              isSubmitting,
+              handleChange,
+              handleBlur,
+              touched,
+              errors,
+            }) => (
+              <Form>
+                <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                  <TextField
+                    label="Email"
+                    name="email"
+                    id="email"
+                    type="email"
+                    variant="outlined"
+                    value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={touched.email && Boolean(errors.email)}
+                    helperText={touched.email && errors.email}
+                  />
+
+                  <TextField
+                    label="Password"
+                    name="password"
+                    id="password"
+                    type="password"
+                    variant="outlined"
+                    value={values.password}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={touched.password && Boolean(errors.password)}
+                    helperText={touched.password && errors.password}
+                  />
+                  <LoadingButton
+                    type="submit"
+                    loading={loading}
+                    loadingPosition="center"
+                    variant="contained">
+                    Submit
+                  </LoadingButton>
+                </Box>
+              </Form>
+            )}
+          </Formik>
 
           <Box sx={{ textAlign: "center", mt: 2 }}>
             <Link to="/register">Do you have not an account?</Link>

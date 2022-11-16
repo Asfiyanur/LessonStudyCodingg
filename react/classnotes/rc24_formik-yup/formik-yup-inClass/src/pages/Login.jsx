@@ -12,27 +12,41 @@ import { Formik, Form } from "formik";
 import { TextField } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import * as yup from "yup";
+import useAuthCall from "../hooks/useAuthCall";
+import { useEffect } from "react";
+import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 
 const loginSchema = yup.object().shape({
-  name: yup.string().required(),
-  age: yup.number().required().positive().integer(),
-  email: yup.string().email("please enter vaid email").required("enter mail"),
+  email: yup
+    .string()
+    .email("Please enter valid email")
+    .required("Please  enter an email"),
   password: yup
     .string()
-    .required("please enter a password")
-    .min(8, "password must have min eight chars")
-    .max(16, "password must have max sixteen chars")
-    .matches(/\d+/, "password must have less a number")
-    .matches(/[a-z]+/, "password must have less a lowercase")
-    .matches(/[!,?{}><%&$#£+-.]+/, "password must have less a special char")
-    .matches(/[A-Z]/, "password must have less a uppercase"),
-
-  website: yup.string().url(),
+    .required("Please enter a password ")
+    .min(8, "Password must have min 8 chars")
+    .max(16, "Password must have max 16 chars")
+    .matches(/\d+/, "Password must have a number")
+    .matches(/[a-z]+/, "Password must have a lowercase")
+    .matches(/[A-Z]+/, "Password must have an uppercase")
+    .matches(/[!,?{}><%&$#£+-.]+/, " Password must have a special char"),
 });
 
 const Login = () => {
   const navigate = useNavigate();
   const { currentUser, error, loading } = useSelector((state) => state?.auth);
+  const { login } = useAuthCall();
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/stock");
+      toastSuccessNotify("Login Performed");
+    }
+  }, [currentUser]);
+
+  useEffect(() => {
+    error && toastErrorNotify("Login can not e performed");
+  }, [error]);
 
   return (
     <Container maxWidth="lg">
@@ -43,7 +57,8 @@ const Login = () => {
         sx={{
           height: "100vh",
           p: 2,
-        }}>
+        }}
+      >
         <Grid item xs={12} mb={3}>
           <Typography variant="h3" color="primary" align="center">
             STOCK APP
@@ -57,14 +72,16 @@ const Login = () => {
               m: "auto",
               width: 40,
               height: 40,
-            }}>
+            }}
+          >
             <LockIcon size="30" />
           </Avatar>
           <Typography
             variant="h4"
             align="center"
             mb={4}
-            color="secondary.light">
+            color="secondary.light"
+          >
             Login
           </Typography>
 
@@ -72,10 +89,12 @@ const Login = () => {
             initialValues={{ email: "", password: "" }}
             validationSchema={loginSchema}
             onSubmit={(values, actions) => {
-              //!login(values)
+              login(values);
+              navigate("/stock");
               actions.resetForm();
               actions.setSubmitting(false);
-            }}>
+            }}
+          >
             {({
               values,
               isSubmitting,
@@ -115,7 +134,8 @@ const Login = () => {
                     type="submit"
                     loading={loading}
                     loadingPosition="center"
-                    variant="contained">
+                    variant="contained"
+                  >
                     Submit
                   </LoadingButton>
                 </Box>

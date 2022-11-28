@@ -48,14 +48,16 @@ function Dashboard(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-        }}>
+        }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}>
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
@@ -71,7 +73,8 @@ function Dashboard(props) {
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders">
+        aria-label="mailbox folders"
+      >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
@@ -92,7 +95,8 @@ function Dashboard(props) {
             sx: {
               backgroundColor: blueGrey[900],
             },
-          }}>
+          }}
+        >
           {drawer}
         </Drawer>
         <Drawer
@@ -109,7 +113,8 @@ function Dashboard(props) {
               backgroundColor: blueGrey[900],
             },
           }}
-          open>
+          open
+        >
           {drawer}
         </Drawer>
       </Box>
@@ -119,7 +124,8 @@ function Dashboard(props) {
           flexGrow: 1,
           p: 3,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-        }}>
+        }}
+      >
         <Toolbar />
         <Outlet />
       </Box>

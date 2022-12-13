@@ -1,5 +1,9 @@
 import { useDispatch } from "react-redux";
-import { fetchStart, loginSuccess } from "../features/authSlice";
+import {
+  fetchStart,
+  loginSuccess,
+  registerSuccess,
+} from "../features/authSlice";
 
 const useAuthCalls = () => {
   const dispatch = useDispatch();
@@ -10,7 +14,13 @@ const useAuthCalls = () => {
     dispatch(loginSuccess(values));
   };
 
-  return { login };
+  const register = (values) => {
+    dispatch(fetchStart());
+    console.log(values);
+    dispatch(registerSuccess(values));
+  };
+
+  return { login, register };
 };
 
 export default useAuthCalls;

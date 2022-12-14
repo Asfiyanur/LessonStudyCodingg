@@ -10,9 +10,9 @@ const App = () => {
   return (
     <>
       <Provider store={store}>
-        {/* <AppRouter /> */}
-        {/* <Login /> */}
-        <Register />
+        <AppRouter />
+        {/* <Login />
+        <Register /> */}
         <ToastContainer />
       </Provider>
     </>

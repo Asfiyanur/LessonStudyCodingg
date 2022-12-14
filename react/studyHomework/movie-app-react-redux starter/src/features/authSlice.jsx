@@ -17,13 +17,15 @@ const authSlice = createSlice({
     },
     loginSuccess: (state, { payload }) => {
       state.loading = false;
-      state.currentUser = payload?.email;
     },
     logoutSuccess: (state) => {
       state.loading = false;
       state.currentUser = null;
     },
     registerSuccess: (state, { payload }) => {
+      state.loading = false;
+    },
+    isActive: (state, { payload }) => {
       state.loading = false;
       state.currentUser = payload;
     },
@@ -40,6 +42,7 @@ export const {
   logoutSuccess,
   registerSuccess,
   fetchFail,
+  isActive,
 } = authSlice.actions;
 
 export default authSlice.reducer;

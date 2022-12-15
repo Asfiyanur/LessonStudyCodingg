@@ -46,27 +46,45 @@ os.system('cls' if os.name == 'nt' else 'clear')
 # special method
 
 
-class Person :
+# class Person :
     
-    company ='clarusway'
+#     company ='clarusway'
+#     person_count =0
     
-    def __init__(self,name,age,gender='female'):
-        self.name=name
-        self.age =age
-        self.gender =gender
-    
-    # def set_details(self,name,age):
-    #     self.name=name
-    #     self.age=age
+#     def __init__(self,name,age,gender='female'):
+#         self.name=name
+#         self.age =age
+#         self.gender =gender
+#         Person.person_count =Person.person_count + 1
         
-    def get_details(self):
-        print(f'{self.name} - {self.age} - {self.gender}')
+#     def __str__(self):
+#         return f'{self.name} - {self.age}'
+    
+#     # def set_details(self,name,age):
+#     #     self.name=name
+#     #     self.age=age
+        
+#     def get_details(self):
+#         print(f'{self.name} - {self.age} - {self.gender}')
 
 
-# person1 =Person()
-# person1.set_details('henry',15)
+# # # person1 =Person()
+# # # person1.set_details('henry',15)
 
-person1=Person('nur',28,'sss')
-person2=Person('ass',28)
-person1.get_details()
-person2.get_details()
+# person1=Person('nur',28,'sss')
+# person2=Person('asf',28)
+
+# # person1.get_details()
+# # person2.get_details()
+
+# # print(Person.person_count)
+
+
+# print(person1)
+# print(person2)
+
+#* encapsulation
+#* abstraction
+#* polymorhism
+#* inheritance
+

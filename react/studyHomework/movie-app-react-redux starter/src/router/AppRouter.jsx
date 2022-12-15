@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import useAuthCalls from "../hooks/useAuthCalls";
 import Login from "../pages/Login";
 import Main from "../pages/Main";
@@ -13,6 +14,7 @@ const AppRouter = () => {
 
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />

@@ -1,6 +1,6 @@
 //TODO useMovieCalls
 import axios from "axios";
-import React from "react";
+
 import { useDispatch } from "react-redux";
 import { fetchFail, fetchStart, fetchSuccess } from "../features/movieSlice";
 
@@ -9,7 +9,7 @@ const useMovieCalls = () => {
   const apiKey = process.env.REACT_APP_movieApiKey;
   const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`;
 
-  const getMovies = async (url) => {
+  const getMovies = async () => {
     dispatch(fetchStart());
     try {
       const { data } = await axios.get(url);

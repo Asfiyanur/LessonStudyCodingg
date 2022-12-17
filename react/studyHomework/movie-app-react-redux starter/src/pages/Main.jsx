@@ -14,12 +14,14 @@ const Main = () => {
   return (
     <div>
       <form>
-        <input type="search" />
-        <button type="submit">search</button>
         <div className="flex justify-center flex-wrap">
-          {movies?.results.map((movie) => (
-            <MovieCard movie={movie} key={movie.id} />
-          ))}
+          <input type="search" />
+          <button type="submit">search</button>
+          <div className="flex justify-center flex-wrap gap-8">
+            {movies?.results.map((movie) => (
+              <MovieCard movie={movie} key={movie.id} />
+            ))}
+          </div>
         </div>
       </form>
     </div>

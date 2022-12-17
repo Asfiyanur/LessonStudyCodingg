@@ -174,32 +174,32 @@ person2 = Person("henry", 33)
 
 
 
-class Person:
-    company = "clarusway"
+#! class Person:
+#     company = "clarusway"
 
     
-    #  automatically runs when the instance is created
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-        self._id = 5000
-        self.__number = 200
+#     #  automatically runs when the instance is created
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#         self._id = 5000
+#         self.__number = 200
 
 
-    def __str__(self):
-        return f"{self.name} - {self.age}"
+#     def __str__(self):
+#         return f"{self.name} - {self.age}"
         
-    def get_details(self):
-        print(f"{self.name} - {self.age}")
+#     def get_details(self):
+#         print(f"{self.name} - {self.age}")
     
 
-person1 = Person("victor", 33)
-print(person1._id)
-person1._id = 4000
-print(person1._id)
+# person1 = Person("victor", 33)
+# print(person1._id)
+# person1._id = 4000
+# print(person1._id)
 
-# print(person1.__number)
-print(person1._Person__number)
+# # print(person1.__number)
+# print(person1._Person__number)
 
 
 
@@ -210,9 +210,9 @@ print(person1._Person__number)
     # kullanıcı gereksiz detaylardan ve bilmesine ihtiyaç olmayan yapıdan uzaklaştırarak yormamak - soyutlama
 
 
-liste = [2, 3,5,1,4]
-liste.sort() 
-print(liste) 
+# liste = [2, 3,5,1,4]
+# liste.sort() 
+# print(liste) 
 
 
 # class Update(models.Model):
@@ -230,12 +230,34 @@ print(liste)
 
 
 
+class Person:
+    company = "clarusway"
+
+    
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def __str__(self):
+        return f"{self.name}"
+        
+    def get_details(self):
+        print(self.name,self.age)
+    
 
 
+class Employe(Person):
 
+    def __init__(self, name, age,path):
+        # self.name = name
+        # self.age = age
+        super().__init__(name,age)
+        self.path =path
+    
 
-
-
+emp1= Employe('barry',20,'FS')
+emp1.get_details()
+print(emp1.company)
 
 
 

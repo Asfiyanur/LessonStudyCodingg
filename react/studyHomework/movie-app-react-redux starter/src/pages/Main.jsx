@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import useMovieCalls from "../hooks/useMovieCalls";
 import MovieCard from "../components/MovieCard";
 import { useSelector } from "react-redux";
+import loadingIcon from "../assets/loadingIcon.svg";
 
 const Main = () => {
   const { getMovies } = useMovieCalls();
-  const { movies } = useSelector((state) => state.movie);
+  const { movies, loading } = useSelector((state) => state.movie);
 
   useEffect(() => {
     getMovies();
@@ -18,6 +19,7 @@ const Main = () => {
           <input type="search" />
           <button type="submit">search</button>
           <div className="flex justify-center flex-wrap gap-8">
+            {loading && <img src={loadingIcon} alt="loading" />}
             {movies?.results.map((movie) => (
               <MovieCard movie={movie} key={movie.id} />
             ))}

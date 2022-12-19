@@ -24,6 +24,7 @@ import {
 
 const useAuthCalls = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const login = async (values) => {
     const { email, password } = values;
@@ -33,6 +34,7 @@ const useAuthCalls = () => {
       await signInWithEmailAndPassword(auth, email, password);
       dispatch(loginSuccess());
       toastSuccessNotify("welcome");
+      navigate("/");
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify("something went wrong");
@@ -50,6 +52,7 @@ const useAuthCalls = () => {
       });
       dispatch(registerSuccess(values));
       toastSuccessNotify("welcome");
+      navigate("/");
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify("something went wrong");
@@ -59,6 +62,7 @@ const useAuthCalls = () => {
   const logout = () => {
     signOut(auth);
     dispatch(logoutSuccess());
+    navigate("/login");
     toastWarningNotify("you are logged out");
   };
 

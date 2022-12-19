@@ -15,7 +15,7 @@ const Navbar = () => {
         <div className="flex-grow items-center" id="navbarSupportedContent1">
           <Link
             className="text-md md:text-xl text-white pr-2 font-semibold"
-            to="#">
+            to="/">
             Movie App
           </Link>
         </div>

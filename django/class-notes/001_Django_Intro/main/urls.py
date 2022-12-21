@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path,include
 # from fscohort.views import homefs
 # from dscohort.views import homeds
+from study.views import home
+from study2.views import asf
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +26,6 @@ urlpatterns = [
     # path('ds/',homeds),
     path('fs/',include('fscohort.urls')),
     path('ds/',include('dscohort.urls')),
+    path('home',home),
+    path('st',asf),
 ]

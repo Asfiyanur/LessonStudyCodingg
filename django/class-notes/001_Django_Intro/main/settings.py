@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     #myapps
     'fscohort',
     'dscohort',
+    'study'
 ]
 
 MIDDLEWARE = [

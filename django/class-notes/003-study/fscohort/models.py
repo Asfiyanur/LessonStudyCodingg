@@ -13,3 +13,7 @@ class Student(models.Model):
     # # files = models.FileField(blank=True, null=True, upload_to='student_files')
     # register_date = models.DateTimeField(auto_now_add=True)
     # update_date = models.DateTimeField(auto_now=True)
+
+
+def __str__(self):
+        return f'{self.number} - {self.first_name} {self.last_name}'

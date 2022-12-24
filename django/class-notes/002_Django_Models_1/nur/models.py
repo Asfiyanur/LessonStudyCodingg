@@ -27,3 +27,12 @@ class Student(models.Model):
     # auto_now: take the update date and time
     last_updated_date = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField()
+    
+    def __str__(self):
+        return f'{self.number}  {self.first_name} '  
+    
+    class Meta :
+        ordering =['number']
+        verbose_name_plural = 'student_list'
+    
+

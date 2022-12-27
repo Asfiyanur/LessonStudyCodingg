@@ -40,7 +40,7 @@ class StudentSerializer(serializers.ModelSerializer):
     
 class PathSerializer(serializers.ModelSerializer):
     
-    # students = StudentSerializer(many=True)
+    students = StudentSerializer(many=True)
     # students = serializers.HyperlinkedRelatedField(
     #     many=True,
     #     read_only=True,
@@ -49,5 +49,5 @@ class PathSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Path
-        fields = "__all__"
-        # fields = ["id", "path_name", "students"]
+        # fields = "__all__"
+        fields = ["id", "path_name", "students"]

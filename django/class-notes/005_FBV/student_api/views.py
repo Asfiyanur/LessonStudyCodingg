@@ -10,3 +10,13 @@ from rest_framework import status
 
 def home(request):
     return Response({'home':'This is home page..'})
+
+
+@api_view(['GET'])
+def students_list(request):
+    students = Student.objects.all()
+    # print(students)
+    serializer = StudentSerializer(students, many=True)
+    # print(serializer)
+    print(serializer.data)
+    return Response(serializer.data)

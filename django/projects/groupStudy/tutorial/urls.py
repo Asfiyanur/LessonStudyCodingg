@@ -5,7 +5,7 @@ from rest_framework import routers
 from .views import Tutorials
 
 router = routers.DefaultRouter()
-router.register('tutorials', Tutorials)
+router.register('tutorial/', Tutorials)
 
 urlpatterns = [
     path('', include(router.urls)),

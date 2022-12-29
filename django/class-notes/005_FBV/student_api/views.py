@@ -18,5 +18,17 @@ def students_list(request):
     # print(students)
     serializer = StudentSerializer(students, many=True)
     # print(serializer)
-    print(serializer.data)
+    # print(serializer.data)
     return Response(serializer.data)
+
+
+@api_view(['POST'])
+def student_create(request):
+    serializer= StudentSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        message ={
+            'message':f'Student updated...'
+        }
+        return Response(message,status=status.HTTP_201_CREATED)
+    return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)

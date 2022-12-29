@@ -4,6 +4,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
+from rest_framework.generics import GenericAPIView, mixins, ListCreateAPIView, RetrieveUpdateDestroyAPIView
+
 
 # My import
 from .models import Student, Path
@@ -171,3 +173,50 @@ class StudentDetail(APIView):
             "message": f"Student {student.last_name} deleted successfully"
         }
         return Response(data)
+    
+    
+# !!!!!!!!!!!!!!!!   GENERİc Api View !!!!!!!!!
+    
+# !!!!!!!!!!!!!!!!   Mixins  -generic Api ile kuullanıla iş yapan Class lar !!!!!!!!!
+
+class StudentGAV(mixins.ListModelMixin, mixins.CreateModelMixin, GenericAPIView):
+    
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+    
+    
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+    
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+    
+class StudentDetailGAV(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, GenericAPIView):
+
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+    
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
+    
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
+    
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)
+    
+    
+    
+    
+# !!!!!!!!!!!!!!!!  Concreate View  !!!!!!!!!
+
+class StudentCV(ListCreateAPIView):
+    
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+    
+class StudentDetailCV(RetrieveUpdateDestroyAPIView):
+    
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+    

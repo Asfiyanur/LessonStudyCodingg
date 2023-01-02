@@ -262,6 +262,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter,OrderingFilter
 class StudentMVS(ModelViewSet):
     
+    
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
     pagination_class=CustomPageNumberPagination

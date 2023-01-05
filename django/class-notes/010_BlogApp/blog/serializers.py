@@ -17,6 +17,7 @@ class BlogSerializer(serializers.ModelSerializer):
     
     category = serializers.StringRelatedField()
     category_id = serializers.IntegerField(write_only=True)
+
     class Meta :
         model = Blog
         fields = (

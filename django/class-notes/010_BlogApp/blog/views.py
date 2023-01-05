@@ -1,5 +1,5 @@
-from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
+
 from .models import Category ,Blog
 from .serializers import CategorySerializer,BlogSerializer
 
